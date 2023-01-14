@@ -2,9 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css?family=Outfit');
+
 @font-face {
   font-family: 'Lusitana';
   src: local('Lusitana'), url(./fonts/Lusitana-Bold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'MeriendaOne';
+  src: local('MeriendaOne'), url(./fonts/MeriendaOne-Regular.ttf) format('truetype');
 }
 
 body {
@@ -14,6 +21,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 code {
