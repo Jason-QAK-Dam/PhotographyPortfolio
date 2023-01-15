@@ -2,10 +2,7 @@ import { LandingPageImages } from "../images";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const Landing = () => {
-  const currentURL = window.location.href 
-
-  const Heading = styled.h1`
+const Heading = styled.h1`
     position: absolute;
     margin: 0;
     top: 10%;
@@ -33,13 +30,15 @@ const Landing = () => {
     width: 0px;
     height: 0px;
   `
+
+const Landing = () => {
   return (
     <div className="grid gap-x-[10px] w-screen h-screen grid-cols-3 bg-black">
       {LandingPageImages.map((val) => {
         return(
-          <Link to={val.title.toLowerCase()} className='group opacity-30 hover:opacity-100 transition-opacity cursor-pointer'>
+          <Link to={val.title.toLowerCase()} key={val.title} className='group opacity-30 hover:opacity-100 transition-opacity cursor-pointer'>
             <img
-              class="w-full max-h-screen object-cover" 
+              className="w-full max-h-screen object-cover" 
               src={val.image}
               alt={val.altText}
             />
@@ -65,7 +64,7 @@ const Landing = () => {
         )
       })}
       <Link to='contact'>
-        <button class="text-white text-2xl absolute top-[60%] left-1/2 transform translate-x-[-50%] w-[270px] h-[60px]
+        <button className="text-white text-2xl absolute top-[60%] left-1/2 transform translate-x-[-50%] w-[270px] h-[60px]
           border-2 border-white hover:scale-105 transition">
           Contact Me
         </button>

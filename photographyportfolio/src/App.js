@@ -4,6 +4,7 @@ import Event from './pages/Event';
 import Portrait from './pages/Portrait';
 import Travel from './pages/Travel';
 import Contact from './pages/Contact';
+import Header from './components/Header';
 import NotFound from './pages/NotFound';
 import { Routes, Route } from "react-router-dom"
 
@@ -11,7 +12,10 @@ export default function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={ <Landing/> } />
+        <Route path="/*" element={ <Header/> } />
+      </Routes>
+      <Routes>
+        <Route exact path="/" element={ <Landing/> } />
         <Route path="event">
           <Route index element={ <Event/> }/>
           <Route path=":id" element={ <Event/> }/>
