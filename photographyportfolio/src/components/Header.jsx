@@ -1,4 +1,4 @@
-import { SocialMediaIcons, LandingPageImages} from "../images";
+import { SocialMediaIcons } from "../images";
 import { Link } from "react-router-dom";
 
 const Header = () => {
@@ -8,12 +8,13 @@ const Header = () => {
     <div style={{fontFamily:'Outfit'}} className="flex justify-between items-center h-[100px] text-white bg-black px-5">
       <Link to='/'>
         <h1
-          class="font-extrabold leading-7 text-transparent text-2xl bg-clip-text bg-gradient-to-r from-[#a0affa] to-white"
+          class="mr-0 md:mr-[20px] lg:mr-[40px] font-extrabold leading-7 text-transparent text-2xl bg-clip-text bg-gradient-to-r from-[#a0affa] to-white"
         >
           The<br/>Foreigner<br/>Photographer
         </h1>
       </Link>
-      <div className="flex justify-between w-[700px] text-[40px] font-bold">
+
+      <div className="justify-between md:w-[400px] lg:w-[700px] md:text-[27px] lg:text-[40px] font-bold hidden md:flex ">
         {links.map((link) => {
           if (window.location.pathname.split("/")[1] === link.toLowerCase()) {
             return (
@@ -23,14 +24,15 @@ const Header = () => {
             )
           } else {
             return (
-              <Link className="border-b-2 border-black p-1 hover:border-white" to={`/${link.toLowerCase()}`} relative='path'>
+              <Link className="border-b-2 border-black p-1 hover:border-white" to={`/${link.toLowerCase()}`}>
                 {link}
               </Link>
             )
           }
         })}
       </div>
-      <div className="flex justify-between h-[60px] w-[220px] bg-black">
+
+      <div className="hidden md:flex md:ml-[20px] lg:ml-[40px] justify-between md:h-[40px] lg:h-[50px] md:w-[150px] lg:w-[200px] bg-black">
         {SocialMediaIcons.map((icon) => {
           return (
             <img className="cursor-pointer transform hover:scale-110 transition" src={icon.image} alt={icon.altText}/>
