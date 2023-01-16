@@ -1,8 +1,10 @@
+import TopicSelect from "./TopicSelect";
+
 const Portrait = () => {
   return (
-    <div>
-      Portrait
-    </div>
+    <>
+      <TopicSelect/>
+    </>
   )
 }
 

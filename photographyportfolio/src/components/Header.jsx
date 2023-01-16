@@ -30,7 +30,8 @@ const Header = () => {
     <div style={{fontFamily:'Outfit'}} className="flex justify-between items-center h-[100px] text-white bg-black px-5">
       <Link to='/'>
         <h1
-          className="mr-0 md:mr-[20px] lg:mr-[40px] font-extrabold leading-7 text-transparent text-2xl bg-clip-text bg-gradient-to-r from-[#a0affa] to-white"
+          className="mr-0 md:mr-[20px] lg:mr-[40px] font-extrabold leading-7 text-transparent text-2xl bg-clip-text 
+            bg-gradient-to-r from-[#a0affa] to-white hover:scale-105 transition"
         >
           The<br/>Foreigner<br/>Photographer
         </h1>

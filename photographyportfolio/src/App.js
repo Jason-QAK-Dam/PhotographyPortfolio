@@ -1,30 +1,35 @@
 import './App.css';
 import Landing from './pages/Landing';
-import Event from './pages/Event';
-import Portrait from './pages/Portrait';
-import Travel from './pages/Travel';
 import Contact from './pages/Contact';
 import Header from './components/Header';
 import NotFound from './pages/NotFound';
 import { Routes, Route } from "react-router-dom"
+import TopicSelect from './pages/TopicSelect';
+
 
 export default function App() {
   return (
     <div>
-      <Routes>
-        <Route path="/*" element={ <Header/> } />
-      </Routes>
-      <Routes>
-        <Route exact path="/" element={ <Landing/> } />
-        <Route path="event">
-          <Route index element={ <Event/> }/>
-          <Route path=":id" element={ <Event/> }/>
-        </Route>
-        <Route path="portrait" element={ <Portrait/> } />
-        <Route path="travel" element={ <Travel/> } />
-        <Route path="contact" element={ <Contact/> } />
-        <Route path="*" element={ <NotFound/>}/>
-      </Routes>
+      <header>
+        <Routes>
+          <Route path="/*" element={<Header/>} />
+        </Routes>
+      </header>
+      <main>
+        <Routes>
+          <Route exact path="/" element={<Landing/>} />
+          {["event", "travel", "portrait"].map((link) => {
+            return (
+              <Route path={link} key={link}>
+                <Route index element={<TopicSelect path={link}/>}/>
+                <Route path=":id" element={<Contact/>}/>
+              </Route>
+            )
+          })}
+          <Route path="contact" element={<Contact/>}/>
+          <Route path="*" element={<NotFound/>}/>
+        </Routes>
+      </main>
     </div>
   )
 }

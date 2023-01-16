@@ -1,7 +1,9 @@
+import TopicSelect from "./TopicSelect";
+
 const Event = () => {
   return (
     <div>
-      Event
+      <TopicSelect/>
     </div>
   )
 }
