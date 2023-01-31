@@ -15,6 +15,18 @@ const Heading = styled.h1`
     -webkit-text-stroke: 1px white;
     -webkit-text-fill-color: white;
   `
+const SubHeading = styled.h2`
+  position: absolute;
+  margin: 0;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%,0);
+  font-family: 'Lusitana';
+  font-weight: bold;
+  color: white;
+  font-size: 4vw;
+`
+
   const CardHeading = styled.h2`
     position: absolute;
     font-family: 'MeriendaOne';
@@ -33,7 +45,7 @@ const Heading = styled.h1`
 
 const Landing = () => {
   return (
-    <div className="grid gap-x-[10px] w-screen h-screen grid-cols-3 bg-black">
+    <div className="grid gap-x-[20px] w-screen h-screen grid-cols-3 bg-black">
       {LandingPageImages.map((val) => {
         return(
           <Link to={val.title.toLowerCase()} key={val.title} className='group opacity-30 hover:opacity-100 transition-opacity cursor-pointer'>
@@ -48,13 +60,13 @@ const Landing = () => {
                 <CardHeading style={{left:'20px'}}>{val.title}</CardHeading>
               </div>
             }
-            {val.title === 'Travel' && 
+            {val.title === 'Portrait' && 
               <div className="opacity-0 group-hover:opacity-100 transition-opacity">
                 <Triangle style={{borderLeft:'16.5vw solid transparent', borderRight:'16.5vw solid transparent', borderBottom:'11vh solid #000'}}/>
                 <CardHeading style={{left:'50%', transform:'translate(-50%,0)'}}>{val.title}</CardHeading>
               </div>
             }
-            {val.title === 'Portrait' && 
+            {val.title === 'Travel' && 
               <div className="opacity-0 group-hover:opacity-100 transition-opacity">
                 <Triangle style={{borderRight:'33vw solid #000', borderTop:'15vh solid transparent', right:'0'}}/>
                 <CardHeading style={{right:'20px'}}>{val.title}</CardHeading>
@@ -72,6 +84,9 @@ const Landing = () => {
       <Heading>
         Jason Dam
       </Heading>
+      <SubHeading>
+        Photographer Portfolio
+      </SubHeading>
     </div>
   )
 }

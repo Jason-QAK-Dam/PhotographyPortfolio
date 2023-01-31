@@ -1,30 +1,18 @@
-import EventsLP from './EventsLP.png';
-import PortraitLP from './PortraitLP.png';
-import TravelLP from './TravelLP.png';
 import Instagram from './instagram.png';
 import YouTube from './youtube.png';
 import Facebook from './facebook.png';
-import Kyoto from './Kyoto.jpg';
-import PortraitExample from './PortraitExample.jpg';
-import Wedding from './Wedding.jpeg';
 
-export const LandingPageImages = [
-  {
-    image: EventsLP,
-    altText: "Events landing page image",
-    title: "Event",
-  },
-  {
-    image: TravelLP,
-    altText: "Travel landing page image",
-    title: "Travel",
-  },
-  {
-    image: PortraitLP,
-    altText: "Portrait landing page image",
-    title: "Portrait",
-  },
-]
+function importAllImages(r, altKey) {
+  let images = [];
+  r.keys().map((item) => { return images.push({
+    "image": r(item),
+    "altText": item.replace('./', '').replace(/\.[^/.]+$/, "") + altKey,
+    "title": item.replace('./', '').replace(/\.[^/.]+$/, "")
+  }); });
+  return images;
+}
+
+export const LandingPageImages = importAllImages(require.context('./LandingPageImages', false, /\.(png|jpe?g|svg)$/), " landing page image");
 
 export const SocialMediaIcons = [
   {
@@ -41,55 +29,17 @@ export const SocialMediaIcons = [
   }
 ]
 
-export const TravelTopicSelect = [
-  {
-    image: Kyoto,
-    caption: "Kyoto"
-  },
-  {
-    image: Kyoto,
-    caption: "Tokyo"
-  },
-  {
-    image: Kyoto,
-    caption: "Osaka"
-  },
-]
+export const PortraitTopicSelect = importAllImages(require.context('./Portrait/Thumbnail', false, /\.(png|jpe?g|JPE?G|svg)$/), " thumbnail image");
+export const TravelTopicSelect = importAllImages(require.context('./Travel/Thumbnail', false, /\.(png|jpe?g|JPE?G|svg)$/), " thumbnail image");
+export const EventTopicSelect = importAllImages(require.context('./Event/Thumbnail', false, /\.(png|jpe?g|JPE?G|svg)$/), " thumbnail image");
 
-export const PortraitTopicSelect = [
-  {
-    image: PortraitExample,
-    caption: "Daniel"
-  },
-  {
-    image: PortraitExample,
-    caption: "Arfin"
-  },
-  {
-    image: PortraitExample,
-    caption: "Edlyn"
-  },
-  {
-    image: PortraitExample,
-    caption: "Sophia"
-  },
-  {
-    image: PortraitExample,
-    caption: "Matthew"
-  },
-  {
-    image: PortraitExample,
-    caption: "Jackson"
-  },
-]
-
-export const EventTopicSelect = [
-  {
-    image: Wedding,
-    caption: "Wedding"
-  },
-  {
-    image: Wedding,
-    caption: "Graduation"
-  },
-]
+export const DisplayImages = {
+  "wedding": importAllImages(require.context('./Event/Wedding', false, /\.(png|jpe?g|JPE?G|svg)$/), " wedding image"),
+  "graduation": importAllImages(require.context('./Event/Graduation', false, /\.(png|jpe?g|JPE?G|svg)$/), " graduation image"),
+  "vivid": importAllImages(require.context('./Event/Vivid', false, /\.(png|jpe?g|JPE?G|svg)$/), " vivid image"),
+  "hokkaido": importAllImages(require.context('./Travel/Hokkaido', false, /\.(png|jpe?g|JPE?G|svg)$/), " Hokkaido image"),
+  "kyoto": importAllImages(require.context('./Travel/Kyoto', false, /\.(png|jpe?g|JPE?G|svg)$/), " Kyoto image"),
+  "shizouka": importAllImages(require.context('./Travel/Shizouka', false, /\.(png|jpe?g|JPE?G|svg)$/), " Shizouka image"),
+  "tokyo": importAllImages(require.context('./Travel/Tokyo', false, /\.(png|jpe?g|JPE?G|svg)$/), " Tokyo image"),
+  "huyen": importAllImages(require.context('./Portrait/Huyen', false, /\.(png|jpe?g|JPE?G|svg)$/), " Huyen image"),
+}

@@ -20,7 +20,7 @@ const CustomLink = ({ to, link }) => {
 
 }
 const Header = () => {
-  const links = ["Event", "Travel", "Portrait", "Contact"];
+  const links = ["Event", "Portrait", "Travel", "Contact"];
   const resolvedPath = useResolvedPath("/");
   const isLandingActive = useMatch({path: resolvedPath.pathname, end:true });
   if (isLandingActive) {

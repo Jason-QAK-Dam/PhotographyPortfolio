@@ -1,4 +1,5 @@
 import Profile from "../images/profile.png";
+
 const Contact = () => {
   return (
     <div>

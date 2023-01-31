@@ -1,5 +1,6 @@
 import './App.css';
 import Landing from './pages/Landing';
+import ImageDisplay from './pages/ImageDisplay';
 import Contact from './pages/Contact';
 import Header from './components/Header';
 import NotFound from './pages/NotFound';
@@ -22,7 +23,7 @@ export default function App() {
             return (
               <Route path={link} key={link}>
                 <Route index element={<TopicSelect path={link}/>}/>
-                <Route path=":id" element={<Contact/>}/>
+                <Route path=":id" element={<ImageDisplay/>}/>
               </Route>
             )
           })}
