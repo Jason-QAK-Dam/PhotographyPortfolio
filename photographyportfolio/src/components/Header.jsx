@@ -43,10 +43,12 @@ const Header = () => {
         })}
       </div>
 
-      <div className="hidden md:flex md:ml-[20px] lg:ml-[40px] justify-between md:h-[40px] lg:h-[50px] md:w-[150px] lg:w-[200px] bg-black">
+      <div className="hidden md:flex justify-between md:w-[150px] lg:w-[200px] bg-black">
         {SocialMediaIcons.map((icon) => {
           return (
-            <img className="cursor-pointer transform hover:scale-110 transition" src={icon.image} alt={icon.altText} key={icon.altText}/>
+            <a href={icon.link} target="_blank">
+              <img className="cursor-pointer transform hover:scale-110 transition md:h-[40px] lg:h-[50px]" src={icon.image} alt={icon.altText} key={icon.altText}/>
+            </a>
           )
         })}
       </div>

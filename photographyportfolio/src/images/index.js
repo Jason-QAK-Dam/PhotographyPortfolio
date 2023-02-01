@@ -12,23 +12,25 @@ function importAllImages(r, altKey) {
   return images;
 }
 
-export const LandingPageImages = importAllImages(require.context('./LandingPageImages', false, /\.(png|jpe?g|svg)$/), " landing page image");
-
 export const SocialMediaIcons = [
   {
     image: Instagram,
-    altText: "Instagram icon"
+    altText: "Instagram icon",
+    link: "https://www.instagram.com/casual.jason/",
   },
   {
     image: YouTube,
-    altText: "YouTube icon"
+    altText: "YouTube icon",
+    link: "https://www.youtube.com/channel/UCnI8hZ31oyEgxURQJzgBuTg",
   },
   {
     image: Facebook,
-    altText: "Facebook icon"
+    altText: "Facebook icon",
+    link: "https://www.facebook.com/jason.dam2/",
   }
 ]
 
+export const LandingPageImages = importAllImages(require.context('./LandingPageImages', false, /\.(png|jpe?g|svg)$/), " landing page image");
 export const PortraitTopicSelect = importAllImages(require.context('./Portrait/Thumbnail', false, /\.(png|jpe?g|JPE?G|svg)$/), " thumbnail image");
 export const TravelTopicSelect = importAllImages(require.context('./Travel/Thumbnail', false, /\.(png|jpe?g|JPE?G|svg)$/), " thumbnail image");
 export const EventTopicSelect = importAllImages(require.context('./Event/Thumbnail', false, /\.(png|jpe?g|JPE?G|svg)$/), " thumbnail image");
