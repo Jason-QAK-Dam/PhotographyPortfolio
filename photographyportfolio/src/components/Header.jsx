@@ -46,7 +46,7 @@ const Header = () => {
       <div className="hidden md:flex justify-between md:w-[150px] lg:w-[200px] bg-black">
         {SocialMediaIcons.map((icon) => {
           return (
-            <a href={icon.link} target="_blank">
+            <a href={icon.link} target="_blank" rel="noreferrer">
               <img className="cursor-pointer transform hover:scale-110 transition md:h-[40px] lg:h-[50px]" src={icon.image} alt={icon.altText} key={icon.altText}/>
             </a>
           )

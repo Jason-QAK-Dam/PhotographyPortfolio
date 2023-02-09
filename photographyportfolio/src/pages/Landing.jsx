@@ -10,7 +10,7 @@ const Heading = styled.h1`
     transform: translate(-50%,0);
     font-family: 'Lusitana';
     font-weight: bold;
-    font-size: 11vw;
+    font-size: 10vw;
     letter-spacing: -4px;
     -webkit-text-stroke: 1px white;
     -webkit-text-fill-color: white;
