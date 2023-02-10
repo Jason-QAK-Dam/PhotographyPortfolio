@@ -28,7 +28,7 @@ const Card = ({image, caption}) => {
   return (
     <Link to={caption.toLowerCase()} key={caption} className="flex justify-center items-center w-full
       h-[calc(9/16*90vw)] md:h-[calc(9/16*45vw)] cursor-pointer rounded-[5%] relative group bg-black
-      hover:bg-gradient-to-r from-black to-orange-900 transition duration-200 hover:scale-105"
+      hover:bg-gradient-to-r from-black to-orange-900 transition duration-200"
     >
       <img src={image} alt={caption} className="h-full w-full rounded-[inherit] object-cover opacity-30 group-hover:opacity-50"/>
       <div className="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] text-white text-5xl font-bold group-hover:scale-110 transition"

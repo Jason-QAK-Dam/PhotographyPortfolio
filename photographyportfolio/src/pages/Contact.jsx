@@ -10,6 +10,8 @@ const Contact = () => {
     e.preventDefault();
     let errorMsg = "";
     const allInputs = Array.from(form.current.elements).slice(0, 3);
+    const button = Array.from(form.current.elements)[3];
+    button.value = "Sending...";
     for (let input of allInputs) {
       if (input.value === '') {
         input.style.borderColor = "red";
@@ -23,9 +25,12 @@ const Contact = () => {
       emailjs.sendForm('service_atrrwgm', 'template_9ltccrq', form.current, 'AnPIasfgOC6Q3okfr')
         .then((result) => {
             setSuccess("Request sent!");
+            button.value = "Send Request";
         }, (error) => {
             setError(error);
         });
+    } else {
+      button.value = "Send Request";
     }
   };
 

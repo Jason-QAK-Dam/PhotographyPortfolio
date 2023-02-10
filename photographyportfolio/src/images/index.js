@@ -45,3 +45,14 @@ export const DisplayImages = {
   "tokyo": importAllImages(require.context('./Travel/Tokyo', false, /\.(png|jpe?g|JPE?G|svg)$/), " Tokyo image"),
   "huyen": importAllImages(require.context('./Portrait/Huyen', false, /\.(png|jpe?g|JPE?G|svg)$/), " Huyen image"),
 }
+
+export const PlaceholderImages = {
+  "wedding": importAllImages(require.context('./Event/Wedding/Placeholder', false, /\.(png|jpe?g|JPE?G|svg)$/), " wedding placeholder image"),
+  "graduation": importAllImages(require.context('./Event/Graduation/Placeholder', false, /\.(png|jpe?g|JPE?G|svg)$/), " graduation placeholder image"),
+  "vivid": importAllImages(require.context('./Event/Vivid/Placeholder', false, /\.(png|jpe?g|JPE?G|svg)$/), " vivid placeholder image"),
+  "hokkaido": importAllImages(require.context('./Travel/Hokkaido/Placeholder', false, /\.(png|jpe?g|JPE?G|svg)$/), " Hokkaido placeholder image"),
+  "kyoto": importAllImages(require.context('./Travel/Kyoto/Placeholder', false, /\.(png|jpe?g|JPE?G|svg)$/), " Kyoto placeholder image"),
+  "shizouka": importAllImages(require.context('./Travel/Shizouka/Placeholder', false, /\.(png|jpe?g|JPE?G|svg)$/), " Shizouka placeholder image"),
+  "tokyo": importAllImages(require.context('./Travel/Tokyo/Placeholder', false, /\.(png|jpe?g|JPE?G|svg)$/), " Tokyo placeholder image"),
+  "huyen": importAllImages(require.context('./Portrait/Huyen/Placeholder', false, /\.(png|jpe?g|JPE?G|svg)$/), " Huyen placeholder image"),
+}

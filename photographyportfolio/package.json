@@ -11,6 +11,7 @@
     "email-js": "^2.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-lazy-load-image-component": "^1.5.6",
     "react-progressive-graceful-image": "^0.7.0",
     "react-router-dom": "^6.6.2",
     "react-scripts": "5.0.1",
